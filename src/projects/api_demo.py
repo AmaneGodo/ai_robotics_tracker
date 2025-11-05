@@ -65,7 +65,7 @@ def get_args() -> argparse.Namespace:
     p.add_argument("--lat", type=float, default=35.78, help="Latitude (default: Raleigh, NC)")
     p.add_argument("--lon", type=float, default=-78.64, help="Longitude (default: Raleigh, NC)")
     p.add_argument("--hours", type=int, default=24, help="How many upcoming hours to show")
-    p.add_argument("--out", type=Path, default=Path("data"), help="Output directory")
+    p.add_argument("--out", type=Path, default=Path("data/projects/api_demo"), help="Output directory")
     return p.parse_args()
 
 # 8. Wire it toggether (composition)
