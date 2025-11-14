@@ -16,6 +16,30 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     - pandas for data processing
     - matplotlib for visualization
 
+### Week 3 - API Plotter -> Dashboard Extension
+- Refactored Week 2 project into clean, modular components:
+    - `data_handler.py` — builds API URLs, fetches JSON, converts to DataFrame
+    - `plot_util.py` — handles plotting logic (single-variable & multi-variable)
+    - `api_plotter.py` — main CLI orchestrator that uses the two modules
+- Added CLI arguments (e.g., `--vars temperature_2m`) for flexible data selection
+- Saved outputs into structured folders:
+    - `data/projects/api_plotter/csv/`
+    - `data/projects/api_plotter/plots/`
+- Successfully ran the project through Python module execution:
+    ```terminal
+    cd src
+    python -m projects.api_plotter.api_plotter --vars temperature_2m
+    ```
+- Produced hourly temperature plots and CSV outputs for different variables
+- Learned the purpose of __init__.py:
+    - Marks a folder as a Python package
+    - Allows relative imports like:
+        ```python
+        from .data_handler import build_url
+        ```
+    - Enables the structure to scale like a real software project
+- Improved modularity, readability, and structure
+
 ## 🤖 Robotics / AI Practice
 ### Week 1 — Foundation & Setup
 - Installed robotics-related libraries: numpy, pandas, matplotlib, requests, opencv-python
