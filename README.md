@@ -79,6 +79,22 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     - Remove Nth Node From End of List
     - Copy List With Random Pointer
 
+### Week 3 – Linked Lists II (Implementation Confidence)
+**Focus:** Moving from following videos → independent problem solving.
+
+**Completed:**
+- Reversed Linked List (self-coded)  
+- Merge Two Sorted Lists (self-coded)  
+- Reorder List (self-coded)  
+- Remove Nth Node (self-coded)  
+- Copy List With Random Pointer (self-coded)  
+- Add Two Numbers (retry independently; understanding improved)  
+
+**Notes / Growth:**
+- Core pointer manipulation patterns becoming more intuitive.  
+- Able to write solutions from memory after guided practice.  
+- Still improving “problem → code” translation speed.  
+
 ## 🌐 Networking Progress
 ### Week 1 — Profile Setup
 - Updated LinkedIn profile
