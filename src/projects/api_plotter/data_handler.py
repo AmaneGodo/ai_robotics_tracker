@@ -24,3 +24,11 @@ def to_dataframe(payload: dict, variables:list[str]) -> pd.DataFrame:
     df = df.dropna().reset_index(drop=True)
     return df
 
+def fetch_city_dataframe(city: str, lon: float, lat: float, vars_list: list) -> pd.DataFrame:
+    url = build_url(lat, lon, vars_list)
+    print(f"fetching [{city}] -> {url}")
+
+    payload = fetch_json(url)
+    df = to_dataframe(payload, vars_list)
+
+    return df

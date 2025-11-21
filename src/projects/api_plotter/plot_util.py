@@ -1,40 +1,49 @@
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-def plot_single(df, variable, out_dir: Path):
+def ensure_plot_dir(root: Path, var: str) -> Path:
+    """
+    Ensure folder like plots/temperature_2m/ exists.
+    Returns full directoory path
+    """
+
+    out_dir = root / var
+    out_dir.mkdir(parents=True, exist_ok=True)
+    return out_dir
+
+def plot_single(city: str, df, variable: str, out_dir: Path):
     out_dir.mkdir(parents=True, exist_ok=True)
 
     plt.figure(figsize=(8, 4))
-    plt.plot(df["time"], df[variable], label=variable)
+    plt.plot(df["time"], df[variable], label=city, linewidth = 2)
+
     plt.xticks(rotation=30, ha="right")
     plt.xlabel("Time")
     plt.ylabel(variable)
-    plt.title(f"{variable} over last 24 hours")
+    plt.title(f"{city} - {variable} (24h)")
     plt.grid(True)
     plt.legend()
 
-    out_path = out_dir / f"{variable}.png"
+    out_path = out_dir / f"{city}.png"
     plt.tight_layout()
     plt.savefig(out_path)
     plt.close()
     return out_path
 
-def plot_multi(df, variables, out_dir: Path):
-    out_dir.mkdir(parents=True, exist_ok=True)
+def plot_multi(df_cities: dict, var: str, out_dir: Path):
+    plt.figure(figsize=(10, 5))
 
-    fig, axes = plt.subplots(len(variables), 1, figsize=(8, 4*len(variables)))
-    if len(variables) == 1:
-        axes = [axes]
+    for city, df in df_cities.items():
+        plt.plot(df["time"], df[var], label=city, linewidth=2)
 
-    for ax, var in zip(axes, variables):
-        ax.plot(df["time"], df[var])
-        ax.set_title(var)
-        ax.grid(True)
-        ax.set_xlabel("Time")
-        ax.set_ylabel(var)
+    plt.title(f"Muti-City comparison - {var}")
+    plt.xlabel("time")
+    plt.ylabel(var)
+    plt.grid(True)
+    plt.legend()
 
-    plt.tight_layout()
     out_path = out_dir / "multi_plot.png"
+    plt.tight_layout()
     plt.savefig(out_path)
     plt.close()
     return out_path
