@@ -40,6 +40,23 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     - Enables the structure to scale like a real software project
 - Improved modularity, readability, and structure
 
+### Week 4 - API Potter -> Multi-City Dashboard Extension
+- Added multi-city support (Tokyo, London, Boston)
+- Updated CLI to accept ist of cities:
+    `--cities Tokyo Boston London`
+- Created city -> coordinate mapping 
+    - Just the three mentioned aboved for now, simple dictionary for locations
+- Implemented multi-series plotting with `plot_multi`.
+- Stored outputs in structured folders:
+    - data/projects/api_plotter/csv/
+    - data/projects/api_plotter/plots/
+- Verified CSV outputs + single-city PNGs + combined comparison PNG.
+- This project now resembles an internship-ready data pipeline with:
+    * CLI interface  
+    * Modular code  
+    * DataFrame handling  
+    * Multi-series visualization  
+
 ## 🤖 Robotics / AI Practice
 ### Week 1 — Foundation & Setup
 - Installed robotics-related libraries: numpy, pandas, matplotlib, requests, opencv-python
@@ -60,6 +77,23 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
 - Produced visual comparison of P vs PI vs PID
 - Code: src/robotics/pid_control_demo.py
 - Plot: data/robotics/pid_tuning_ccomparison.png
+
+### Week 4 - PID Control With Seonsor Noise
+- Added measurement noise to PID simulation to mimic real robotic sensors
+    ```python
+    measured = true_position + np.random.normal(0, 0.3)
+    ```
+- Observed how noise affecs control stability (especially the derivative term)
+- Implemented PID ccorrection using measured (noisy) sensor data
+- Tuned parameters to reduce oscillations while eliminating steady-state error:
+    - Lowering K_derivative prevents noise from explodinng derivative.
+    - Increasinng k_integral removes steady-state error.
+    - Increasing k_proportional leads to faster response but could cause overshoot when too much.
+- Plotted:
+    - True Position
+    - Noisy Sensor Measurement
+    - PID Corrected Output
+- Learned why robots needs filatering (noise -> instability) and how PID reactes.
 
 ## 💡 NeetCode / Algorithms
 ### Week 1 — Sliding Window Patterns
