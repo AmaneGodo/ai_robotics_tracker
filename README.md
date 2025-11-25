@@ -113,8 +113,14 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     - Remove Nth Node From End of List
     - Copy List With Random Pointer
 
-### Week 3 – Linked Lists II (Implementation Confidence)
-**Focus:** Moving from following videos → independent problem solving.
+### Week 4 – Linked Lists II (Implementation Confidence)
+- This week's main focus was to not just to learn but also to be comfortable to solve on my own. 
+    - Reverse Linked List
+    - Merge Two Sorted Lists
+    - Reorder List
+    - Remove Nth Node From End of List
+    - Copy List With Random Pointer
+
 
 **Completed:**
 - Reversed Linked List (self-coded)  
@@ -142,3 +148,18 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
 - Followed two open-source robotics repositories:
     - ros2/ros2
     - cyberbotics/webots
+
+### Week 3 - Continue connecting
+- Updated my about page on LinkedIn 
+- Added my ai robotics project detail in experience. 
+- Liked two posts for sllight engagement
+    - Google Deepmind
+    - NVIDIA
+- followed Jensen Huang and connected with NCSU alumni
+
+### Week 4 – Continued Visibility 
+- Updated Featured section on LinkedIn:
+  - Added GitHub repo link for API Dashboard + Robotics simulations.
+  - Added multi-city plot image as visual project proof.
+- Maintain weekly micro-engagement (2–3 robotics posts).
+- Connect with 2 more engineers in robotics / SWE.
