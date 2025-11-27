@@ -95,6 +95,20 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     - PID Corrected Output
 - Learned why robots needs filatering (noise -> instability) and how PID reactes.
 
+### Week 5 – Why Robots Need Filters (Kalman Filter Foundations)
+- Watched “Kalman Filter Explained Simply” to understand filter intuition.
+- Learned why robots cannot rely on raw sensor readings due to noise, drift, and imperfect measurements.
+- Studied how PID controllers struggle with noisy signals, especially the derivative term, which amplifies randomness and causes unstable corrections.
+- Understood the purpose of the Kalman Filter:
+    - Predict the next state using a motion model
+    - Compare it with the noisy sensor reading
+    - Combine them into the best estimate using uncertainty weights
+- Wrote a clean 5-sentence explanation summarizing:
+    - Why robots need filters
+    - Why PID alone fails
+    - How the Kalman Filter improves state estimation
+- Drew and documented the classic Predict → Update → Repeat loop diagram.
+
 ## 💡 NeetCode / Algorithms
 ### Week 1 — Sliding Window Patterns
 - Practiced:
