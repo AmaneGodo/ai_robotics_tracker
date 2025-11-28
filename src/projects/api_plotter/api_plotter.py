@@ -2,6 +2,7 @@ import argparse
 from pathlib import Path
 from .data_handler import build_url, fetch_json, to_dataframe, fetch_city_dataframe
 from .plot_util import plot_single, plot_multi, ensure_plot_dir
+from .insight_util import compute_basic_stats, generate_insights, save_insights
 
 PROJECT_NAME = "api_plotter"
 DEFAULT_OUT = Path(f"data/projects/{PROJECT_NAME}")
@@ -26,6 +27,9 @@ def get_args():
 
     # get the folder path to save the csv and plot png
     p.add_argument("--out", type=Path, default=DEFAULT_OUT, help="Output folder")
+
+    p.add_argument("--insights", action="store_true",
+                   help="Generate insights text files for each city")
     return p.parse_args()
 
 def get_city_coords(city_name: str):
@@ -70,6 +74,9 @@ def run():
     csv_root = args.out / "csv"
     csv_root.mkdir(parents=True, exist_ok=True)
 
+    insights_root = args.out / "insights"
+    insights_root.mkdir(parents=True, exist_ok=True)
+
     df_cities = {}
     for city in args.cities:
         # get lat and lon from the city
@@ -78,6 +85,10 @@ def run():
         # construct the dataframe using the function we just made and save 
         df = fetch_city_dataframe(city, lat, lon, args.vars)
         df_cities[city] = df
+
+        stats = compute_basic_stats(df)
+        insights = generate_insights(city, stats)
+        save_insights(city, stats, insights, insights_root)
 
         # save csv per city
         csv_path = csv_root / f"{city}.csv"

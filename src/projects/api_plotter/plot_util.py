@@ -20,7 +20,7 @@ def plot_single(city: str, df, variable: str, out_dir: Path):
     plt.xticks(rotation=30, ha="right")
     plt.xlabel("Time")
     plt.ylabel(variable)
-    plt.title(f"{city} - {variable} (24h)")
+    plt.title(f"{city} - {variable} (Weekly)")
     plt.grid(True)
     plt.legend()
 

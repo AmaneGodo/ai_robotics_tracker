@@ -57,6 +57,37 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     * DataFrame handling  
     * Multi-series visualization  
 
+### Week 5 — Insight Engine Extension (Analytics Layer)
+**Goal:** Add real analytics capability to the multi-city API dashboard by computing statistics and generating human-readable insights.
+
+## 📊 New Features Added
+- Implemented an **analytics module** with:
+  - `compute_basic_stats(df)` — calculates:
+    - mean  
+    - variance  
+    - min / max  
+    - weekly temperature change  
+  - `generate_insights(city, stats)` — produces natural-language insights such as:
+    - “Tokyo warmed by 3.2°C over the last week.”
+    - “London shows high variance in temperature (unstable weather).”
+- Added `save_insights()` to export each city’s insights into:
+    data/projects/api_plotter/insights/<city>_insights.txt
+- Integrated insights into the main CLI dashboard (`api_plotter.py`):
+- After fetching & saving CSVs
+- After generating plots
+- Dashboard now auto-computes:
+  - analytics  
+  - insights  
+  - insight text files  
+- Example CLI:
+    ```bash
+    cd src
+    python -m projects.api_plotter.api_plotter \
+    --cities Tokyo London Boston \
+    --vars temperature_2m
+    ```
+
+
 ## 🤖 Robotics / AI Practice
 ### Week 1 — Foundation & Setup
 - Installed robotics-related libraries: numpy, pandas, matplotlib, requests, opencv-python
