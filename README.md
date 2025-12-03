@@ -166,6 +166,19 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     - Remove Nth Node From End of List
     - Copy List With Random Pointer
 
+### Week 5 - Binary Trees
+- Watched the videos to understand the foundamental.
+    - BST Insert and Remove
+    - Depth first search
+    - Breadth-first search
+    - BST sets and maps
+    - Iterative DFS
+
+- Learned and practiced: 
+    - Invert Binary Tree
+    - Maximum Depth of Binary Tree
+    - Diameter of binary tree
+    - Balanced binary tree
 
 **Completed:**
 - Reversed Linked List (self-coded)  
