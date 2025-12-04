@@ -140,6 +140,16 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     - How the Kalman Filter improves state estimation
 - Drew and documented the classic Predict → Update → Repeat loop diagram.
 
+### Week 5 - Continue learning about Kalman Filter
+- Watched intuition videos on Kalman Filters (no-math versions).
+- Wrote a 5-sentence conceptual explanation (estimation, noise handling, prediction/correction loop).
+    1. The Kalman filter estimates the true state of a system by combining a mathematical prediction with noisy sensor measurements.
+    2. Simple PID control struggles under noise because sensors never report perfect values, causing unstable or jittery behavior.
+    3. The prediction step uses a physics model and the previous state to estimate where the robot should be after an input (e.g., throttle or motor command).
+    4. The correction/update step adjusts that prediction based on the difference between the predicted value and the actual noisy sensor reading.
+    5. Robots rely on Kalman filters because they provide a smooth, reliable estimate of position, speed, or orientation — essential for drones, cars, and manipulators operating in noisy real-world environments.
+- Drew a continuous prediction → correction diagram to visualize the loop.
+
 ## 💡 NeetCode / Algorithms
 ### Week 1 — Sliding Window Patterns
 - Practiced:
