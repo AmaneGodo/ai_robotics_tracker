@@ -83,7 +83,7 @@ def run():
         lat, lon = get_city_coords(city)
 
         # construct the dataframe using the function we just made and save 
-        df = fetch_city_dataframe(city, lat, lon, args.vars)
+        df = fetch_city_dataframe(city, lon, lat, args.vars)
         df_cities[city] = df
 
         stats = compute_basic_stats(df)

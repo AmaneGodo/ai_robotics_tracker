@@ -1,8 +1,0 @@
-Mean:             -16.9
-Variance:         7.1
-Min:              -22.6
-Max:              -11.9
-Weekly change:    -5.7
-- Boston cooled by 5.7 C over the week.
-- Boston shows high variance in temperature (unstable weather).
-- Boston temperature ranged from -22.6 C to -11.9 C.

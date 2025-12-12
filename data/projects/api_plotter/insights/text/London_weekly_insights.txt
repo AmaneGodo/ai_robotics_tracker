@@ -1,0 +1,14 @@
+Weekly Summary for London
+Variable of the insight - temperature_2m
+===============================================
+
+Mean:             8.7
+Variance:         5.2
+Min:              1.4
+Max:              12.6
+Weekly change:    1.10
+Percent Change:   12.50%
+Insights:
+- London warmed by 1.1 C over the week.
+- London shows high variance in temperature_2m.
+- London's temperature_2m ranged from 1.4 C to 12.6 C.

@@ -1,8 +1,0 @@
-Mean:             26.8
-Variance:         0.1
-Min:              26.0
-Max:              27.6
-Weekly change:    0.2
-- London warmed by 0.2 C over the week.
-- London shows stable weather (low variance).
-- London temperature ranged from 26.0 C to 27.6 C.

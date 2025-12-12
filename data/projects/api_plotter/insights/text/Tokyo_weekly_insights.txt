@@ -1,0 +1,14 @@
+Weekly Summary for Tokyo
+Variable of the insight - temperature_2m
+===============================================
+
+Mean:             19.8
+Variance:         2.7
+Min:              16.6
+Max:              21.7
+Weekly change:    0.00
+Percent Change:   0.00%
+Insights:
+- Tokyo
+- Tokyo shows moderate variance in temperature_2m
+- Tokyo's temperature_2m ranged from 16.6 C to 21.7 C.

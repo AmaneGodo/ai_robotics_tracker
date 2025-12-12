@@ -1,8 +1,0 @@
-Mean:             12.5
-Variance:         3.8
-Min:              9.2
-Max:              16.5
-Weekly change:    5.7
-- Tokyo warmed by 5.7 C over the week.
-- Tokyo shows high variance in temperature (unstable weather).
-- Tokyo temperature ranged from 9.2 C to 16.5 C.

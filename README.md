@@ -60,7 +60,7 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
 ### Week 5 — Insight Engine Extension (Analytics Layer)
 **Goal:** Add real analytics capability to the multi-city API dashboard by computing statistics and generating human-readable insights.
 
-## 📊 New Features Added
+#### 📊 New Features Added
 - Implemented an **analytics module** with:
   - `compute_basic_stats(df)` — calculates:
     - mean  
@@ -87,6 +87,49 @@ This repository documents my weekly progress toward becoming a Robotics + AI Sof
     --vars temperature_2m
     ```
 
+### Week 6 — Weekly Insight Engine + Portfolio Polish
+**Goal:** Turn the multi-city API dashboard into a recruiter-ready analytics project by adding automated weekly insights, structured outputs, and clean documentation.
+
+#### 📊 New Features Added
+- Upgraded analytics pipeline to compute **weekly statistics** from hourly time-series data:
+  - mean  
+  - variance  
+  - min / max  
+  - weekly change (last value − first value)  
+  - percent change  
+- Implemented **auto-detected variable handling**:
+  - Supports temperature and non-temperature variables (e.g., wind speed)
+  - Insight language adapts automatically (e.g., “warmed/cooled” vs “increased/decreased”)
+
+#### 🧠 Insight Generation Logic
+- Built a rule-based insight engine that converts statistics into natural-language summaries:
+  - “London warmed by 3.1°C over the past week.”
+  - “Wind speed showed high variability this week.”
+  - “Temperatures ranged from −2.0°C to 8.5°C.”
+- Insights are generated **automatically per city**, not hard-coded.
+
+#### 📁 Output Structure Improvements
+- Added professional output organization:
+  - Human-readable insight reports (TXT)
+  - Machine-readable structured outputs (JSON)
+
+#### 📈 Dashboard Integration
+- Integrated insight generation directly into the CLI workflow:
+- Data fetch → CSV save → plot generation → analytics → insights
+- Single command now produces:
+- CSV files
+- Single-city plots
+- Multi-city comparison plots
+- Weekly insight reports
+
+#### 🧪 Example CLI
+```bash
+cd src
+python -m projects.api_plotter.api_plotter \
+--cities Tokyo London Boston \
+--vars temperature_2m \
+--insights
+```
 
 ## 🤖 Robotics / AI Practice
 ### Week 1 — Foundation & Setup

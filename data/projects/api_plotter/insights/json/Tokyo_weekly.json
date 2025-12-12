@@ -1,0 +1,20 @@
+{
+    "city": "Tokyo",
+    "variables": "temperature_2m",
+    "stats": {
+        "variables": "temperature_2m",
+        "variance": 2.6795418848167536,
+        "mean": 19.75625,
+        "min": 16.6,
+        "max": 21.7,
+        "first_val": 16.8,
+        "second_val": 16.8,
+        "weekly_change": 0.0,
+        "percent_change": 0.0
+    },
+    "insights": [
+        "Tokyo",
+        "Tokyo shows moderate variance in temperature_2m",
+        "Tokyo's temperature_2m ranged from 16.6 C to 21.7 C."
+    ]
+}

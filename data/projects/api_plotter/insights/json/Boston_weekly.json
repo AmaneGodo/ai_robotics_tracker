@@ -1,0 +1,20 @@
+{
+    "city": "Boston",
+    "variables": "temperature_2m",
+    "stats": {
+        "variables": "temperature_2m",
+        "variance": 12.544240565008728,
+        "mean": -0.8005208333333332,
+        "min": -6.8,
+        "max": 7.1,
+        "first_val": 7.1,
+        "second_val": 6.6,
+        "weekly_change": -0.5,
+        "percent_change": -7.042253521126761
+    },
+    "insights": [
+        "Boston cooled by 0.5 C over the week.",
+        "Boston shows high variance in temperature_2m.",
+        "Boston's temperature_2m ranged from -6.8 C to 7.1 C."
+    ]
+}

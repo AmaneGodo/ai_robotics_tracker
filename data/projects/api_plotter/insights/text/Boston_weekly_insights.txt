@@ -1,0 +1,14 @@
+Weekly Summary for Boston
+Variable of the insight - temperature_2m
+===============================================
+
+Mean:             -0.8
+Variance:         12.5
+Min:              -6.8
+Max:              7.1
+Weekly change:    -0.50
+Percent Change:   -7.04%
+Insights:
+- Boston cooled by 0.5 C over the week.
+- Boston shows high variance in temperature_2m.
+- Boston's temperature_2m ranged from -6.8 C to 7.1 C.

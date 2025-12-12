@@ -1,0 +1,20 @@
+{
+    "city": "London",
+    "variables": "temperature_2m",
+    "stats": {
+        "variables": "temperature_2m",
+        "variance": 5.16074580061082,
+        "mean": 8.688020833333333,
+        "min": 1.4,
+        "max": 12.6,
+        "first_val": 8.8,
+        "second_val": 9.9,
+        "weekly_change": 1.0999999999999996,
+        "percent_change": 12.499999999999995
+    },
+    "insights": [
+        "London warmed by 1.1 C over the week.",
+        "London shows high variance in temperature_2m.",
+        "London's temperature_2m ranged from 1.4 C to 12.6 C."
+    ]
+}
