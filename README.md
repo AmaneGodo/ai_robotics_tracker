@@ -183,7 +183,7 @@ python -m projects.api_plotter.api_plotter \
     - How the Kalman Filter improves state estimation
 - Drew and documented the classic Predict → Update → Repeat loop diagram.
 
-### Week 5 - Continue learning about Kalman Filter
+### Week 6 - Continue learning about Kalman Filter
 - Watched intuition videos on Kalman Filters (no-math versions).
 - Wrote a 5-sentence conceptual explanation (estimation, noise handling, prediction/correction loop).
     1. The Kalman filter estimates the true state of a system by combining a mathematical prediction with noisy sensor measurements.
