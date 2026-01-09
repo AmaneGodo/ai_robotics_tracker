@@ -16,10 +16,12 @@ class KalmanFilterPosVel:
         self.dt = dt
 
         # State vector [pos, vel]
+        # "At any moment, I believe the system is at position x and veocity v"
         self.x = np.array([[initial_position],
                            [initial_velocity]], dtype=float)
 
         # State covariance (uncertainty)
+        # "How sure am I about positions and velocity?"
         self.P = np.eye(2) * initial_uncertainty
 
         # State transition matrix (constant velocity model)
@@ -33,7 +35,7 @@ class KalmanFilterPosVel:
         self.R = np.array([[measurement_variance]], dtype=float)
 
         # Process noise covariance (how much acceleration uncertainty you expect)
-        # This comes from modeling unknown acceleration as noise.
+        # Asuming acceleration exists, but I don't model it explicitly -> treat acceleration as a noise.
         q = accel_variance
         dt2 = dt * dt
         dt3 = dt2 * dt
@@ -58,10 +60,11 @@ class KalmanFilterPosVel:
         """
         z = np.array([[z]], dtype=float)
 
-        # Innovation / residual
+        # Innovation / residual - how wrong was my prediction?
         y = z - (self.H @ self.x)
 
-        # Innovation covariance
+        # Innovation covariance - How uncertain was my predicted sensor reading?
+        # S represents the total uncertainty of the innovation, combining prediction uncertainty and sensor noise
         S = self.H @ self.P @ self.H.T + self.R
 
         # Kalman Gain
