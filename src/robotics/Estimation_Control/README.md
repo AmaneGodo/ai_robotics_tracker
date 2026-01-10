@@ -2,6 +2,15 @@
 This project demonstrates a complete **estimation + control pipeline** commonly used in robotics and autonomous systems.  
 A noisy sensor measurement is filtered using a Kalman Filter to estimate the system state, and a PID controller uses that estimate to drive the system toward a target position.
 
+This project focuses on correctness and clarity rather than optimal performance, mirroring how real robotic systems are incrementally developed and validated.
+
+## Limitations
+- The Kalman Filter does not explicitly model external disturbances.
+- Only position is measured; velocity is estimated indirectly.
+- The system is limited to 1D motion.
+
+These limitations were intentionally chosen to keep the project focused on foundational estimation and control concepts.
+
 ## System Overview
 The simulation consists of four main components:
 
@@ -50,6 +59,12 @@ The PID controller computes the control input (acceleration/force proxy) based o
 
 The controller uses the **Kalman state estimate**, not raw sensor data, for safer and more stable control.
 
+### Control Input Behavior
+The control input initially spikes to reduce large position error, then gradually settles as the system approaches steady state.  
+In the presence of constant disturbance, the controller maintains a nonzero steady control input to counteract external forces, which is consistent with real-world control behavior.
+
+This plot highlights how estimation quality directly influences control effort in closed-loop systems.
+
 ## Why Estimation Improves Control
 Raw sensor data is noisy and imperfect.  
 Using a Kalman Filter provides a smoother, less biased estimate of the system state, allowing the PID controller to make better control decisions.
@@ -69,7 +84,7 @@ python simulate.py
 
 ## Tuning
 ### Process Noise vs Measurement Noise Tuning
-In this simulation, the plant includes a constant disturbance that is not explicitly modeled in the Kalman Filter’s prediction step, causing the true state to never reach the target state. This creates a realistic model mismatch scenario commonly encountered in real robotic systems.
+In this simulation, the plant includes a constant disturbance that is not explicitly modeled in the Kalman Filter’s prediction step, initially causing steady-state error due to estimator–plant model mismatch. This creates a realistic model mismatch scenario commonly encountered in real robotic systems.
 
 To improve estimator and control performance, the following tuning adjustments were made:
 - Increased process noise variance (Q): 1.0 → 3.0
@@ -87,5 +102,4 @@ To improve estimator and control performance, the following tuning adjustments w
 
 ## Key Insight
 - When disturbances cannot be explicitly modeled, tuning process and measurement noise allows the estimator to remain robust without increasing model complexity.
-
 - Estimator tuning directly impacts control performance; improving state estimation under model uncertainty enables more accurate and stable closed-loop control.

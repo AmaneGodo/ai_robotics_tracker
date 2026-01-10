@@ -7,6 +7,10 @@ from plant import Plant
 from sensor import Sensor
 from kalman_filter import KalmanFilter
 from pid_controller import PIDController
+from pathlib import Path
+
+PROJECT_NAME = "Estimation Control"
+DEFAULT_OUT = Path(f"data/robotics/{PROJECT_NAME}")
 
 # -----------------------------
 # Simulation parameters
@@ -26,7 +30,7 @@ sensor = Sensor(measurement_std = 1.0)
 
 kalman = KalmanFilter(dt=dt, process_var=3, measurement_var=0.8)
 
-controller = PIDController(target=target_position, kp=2, ki=0.2, kd=1)
+controller = PIDController(target=target_position, kp=2, ki=0.3, kd=0.8)
 
 # -----------------------------
 # Initial state
@@ -77,6 +81,10 @@ for _ in range(steps):
 # -----------------------------
 time = np.arange(steps) * dt
 
+# -----------------------------
+# Robotics behavior
+# -----------------------------
+DEFAULT_OUT.mkdir(parents=True, exist_ok=True)
 plt.figure(figsize=(10, 5))
 plt.plot(time, true_positions, label="True Position")
 plt.plot(time, measured_positions, '.', alpha=0.4, label="Measured Position")
@@ -88,4 +96,20 @@ plt.title("Kalman + PID Position Control")
 plt.legend()
 plt.grid()
 
+out_path = DEFAULT_OUT / "Robotics Behavior by Kalamn filter and PID controller.png"
+plt.savefig(out_path, dpi=300)
+
+# -----------------------------
+# Controller Input
+# -----------------------------
+plt.show()
+plt.figure()
+plt.plot(time, control_inputs)
+plt.title("Control Input (u)")
+plt.xlabel("Time (s)")
+plt.ylabel("Acceleration / Force")
+plt.grid()
+
+out_path = DEFAULT_OUT / "Control Input vs time.png"
+plt.savefig(out_path, dpi = 300)
 plt.show()
