@@ -4,10 +4,19 @@ A noisy sensor measurement is filtered using a Kalman Filter to estimate the sys
 
 This project focuses on correctness and clarity rather than optimal performance, mirroring how real robotic systems are incrementally developed and validated.
 
-## Limitations
-- The Kalman Filter does not explicitly model external disturbances.
-- Only position is measured; velocity is estimated indirectly.
-- The system is limited to 1D motion.
+## Limitations of This Model
+This project is intentionally designed as a **foundational control and estimation demo**, and therefore includes several simplifying assumptions:
+
+- **Model mismatch:**  
+  The Kalman Filter does not model constant disturbances (e.g., bias or external forces) present in the plant. As a result, the estimated state can remain slightly above the true state when unmodeled disturbances act on the system.
+- **No bias estimation:**  
+  The filter estimates only position and velocity. Sensor bias and constant disturbances are not included in the state vector, which limits long-term accuracy under persistent external forces.
+- **Linear dynamics assumption:**  
+  The system assumes linear motion and Gaussian noise. Nonlinear dynamics and non-Gaussian noise are not addressed in this implementation.
+- **Manual PID tuning:**  
+  PID gains are tuned empirically. The controller is not adaptive or optimal and does not adjust gains automatically based on system behavior.
+
+Despite these limitations, the model captures the core interaction between **state estimation (Kalman filtering)** and **feedback control (PID)**, which is fundamental to real-world robotics systems.
 
 These limitations were intentionally chosen to keep the project focused on foundational estimation and control concepts.
 
