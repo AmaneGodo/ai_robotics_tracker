@@ -1,10 +1,13 @@
 # Kalman Filter + PID Control — 1D Position Control
 This project demonstrates a complete **estimation + control pipeline** commonly used in robotics and autonomous systems.  
-A noisy sensor measurement is filtered using a Kalman Filter to estimate the system state, and a PID controller uses that estimate to drive the system toward a target position.
+The objective is to demonstrate:
+- how noisy sensor data is transformed into a usable system state via filtering,
+- how control decisions depend on estimator quality, and
+- how modeling assumptions and unmodeled disturbances affect closed-loop behavior.
 
-This project focuses on correctness and clarity rather than optimal performance, mirroring how real robotic systems are incrementally developed and validated.
+Rather than optimizing performance, the system emphasizes correct architecture, realistic failure modes, and explainability, reflecting how real robotic systems are built, tested, and iteratively improved.
 
-## Limitations of This Model
+## Design scope and known limitations
 This project is intentionally designed as a **foundational control and estimation demo**, and therefore includes several simplifying assumptions:
 
 - **Model mismatch:**  
@@ -18,7 +21,7 @@ This project is intentionally designed as a **foundational control and estimatio
 
 Despite these limitations, the model captures the core interaction between **state estimation (Kalman filtering)** and **feedback control (PID)**, which is fundamental to real-world robotics systems.
 
-These limitations were intentionally chosen to keep the project focused on foundational estimation and control concepts.
+These limitations are intentional. They allow the project to clearly expose how estimator assumptions, tuning, and controller behavior interact in a closed-loop robotic system.
 
 ## System Overview
 The simulation consists of four main components:
@@ -50,12 +53,12 @@ The Kalman Filter estimates the system’s **current state** (position and veloc
 
 The Kalman Filter estimates the current state only and does not use the target; target tracking is handled entirely by the PID controller.
 
-### Key Concepts
-- **Prediction** increases uncertainty over time
-- **Correction** reduces uncertainty using sensor data
-- **Kalman Gain** balances trust between prediction and measurement
+### Estimation Behavior
+- During prediction, uncertainty grows as the model extrapolates forward.
+- During correction, uncertainty contracts as new sensor information is incorporated.
+- The Kalman Gain dynamically balances trust between the model and the sensor.
 
-The filter adapts automatically when system behavior changes.
+Because the plant includes an unmodeled constant disturbance, the estimator must rely on tuning rather than explicit modeling to remain accurate.
 
 ## PID Controller (Control)
 The PID controller computes the control input (acceleration/force proxy) based on the error between target position and estimated position.
@@ -81,10 +84,11 @@ Using a Kalman Filter provides a smoother, less biased estimate of the system st
 This separation of **estimation** and **control** reflects real robotics systems.
 
 ## Results
-The simulation shows:
-- Noisy sensor measurements scattered around the true state
-- A smooth Kalman estimate tracking the true position
-- Stable convergence toward the target using PID control
+The simulation demonstrates several core robotics behaviors:
+- Noisy measurements alone are insufficient for reliable control.
+- The Kalman Filter produces a smooth, physically consistent state estimate.
+- The PID controller converges toward the target using the estimated state.
+- Under constant unmodeled disturbance, steady control effort is required to maintain equilibrium.
 
 ## How to Run
 ```bash
