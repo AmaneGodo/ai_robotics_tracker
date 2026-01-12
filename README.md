@@ -131,6 +131,22 @@ python -m projects.api_plotter.api_plotter \
 --insights
 ```
 
+### Week 7 — Estimation + Control (Kalman Filter Integration)
+**Goal:** Transition from pure data pipelines to robotics-relevant estimation and control concepts, bridging software engineering with robotics fundamentals.
+- Focused on state estimation and control theory as a core robotics skill.
+- Studied how estimation (Kalman Filter) and control (PID) complement each other in real systems.
+- Connected prior PID control work with filtering concepts:
+    - Control decides what input to apply
+    - Estimation decides what the true system state actually is
+- Built intuition around the Estimation → Control → Estimation loop used in:
+    - Autonomous vehicles
+    - Drones
+    - Mobile robots
+- Clarified how Kalman Filters act as the “sensor fusion & smoothing layer” feeding reliable state into controllers.
+
+**Key Learning Outcome:**
+Modern robotics systems are not control-only or estimation-only — they are tightly coupled pipelines where estimation stabilizes control, and control assumptions inform prediction.
+
 ## 🤖 Robotics / AI Practice
 ### Week 1 — Foundation & Setup
 - Installed robotics-related libraries: numpy, pandas, matplotlib, requests, opencv-python
@@ -193,7 +209,25 @@ python -m projects.api_plotter.api_plotter \
     5. Robots rely on Kalman filters because they provide a smooth, reliable estimate of position, speed, or orientation — essential for drones, cars, and manipulators operating in noisy real-world environments.
 - Drew a continuous prediction → correction diagram to visualize the loop.
 
-## 💡 NeetCode / Algorithms
+### Week 7 — Kalman Filter + Estimation–Control Pipeline
+- Deepened understanding of Kalman Filter beyond intuition videos:
+    - Prediction step (motion / system model)
+    - Update step (sensor measurement correction)
+    - Role of uncertainty (process noise vs measurement noise)
+- Explicitly studied estimation vs control responsibilities:
+    - Estimation answers: “Where am I really?”
+    - Control answers: “What should I do next?”
+- Mapped real-world examples:
+    - Cruise control (speed estimation + throttle control)
+    - Robot localization (position estimate + movement commands)
+- Reinforced why Kalman Filters are foundational for:
+    - Sensor fusion (IMU + GPS + encoders)
+    - Stability under noisy measurements
+    - Reliable feedback for controllers
+- Conceptual Milestone:
+    - Can now clearly explain why Kalman Filters exist, where they sit in the pipeline, and how they interact with controllers — without relying on math-heavy derivations.
+
+## 💡 LeetCode / Algorithms
 ### Week 1 — Sliding Window Patterns
 - Practiced:
     - Best Time to Buy & Sell Stock
@@ -245,6 +279,15 @@ python -m projects.api_plotter.api_plotter \
 - Core pointer manipulation patterns becoming more intuitive.  
 - Able to write solutions from memory after guided practice.  
 - Still improving “problem → code” translation speed.  
+
+### Week 7 — Binary Trees (Medium-Level Confidence)
+- Solved / Confident With:
+    - Lowest Common Ancestor of a BST
+    - Binary Tree Level Order Traversal
+    - Binary Tree Right Side View
+    - Count Good Nodes in Binary Tree
+    - Validate Binary Search Tree
+    - Kth Smallest Element in a BST
 
 ## 🌐 Networking Progress
 ### Week 1 — Profile Setup
