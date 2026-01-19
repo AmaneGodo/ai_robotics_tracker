@@ -1,1 +1,0 @@
-# Responsibility - plotting, logging, comparisons

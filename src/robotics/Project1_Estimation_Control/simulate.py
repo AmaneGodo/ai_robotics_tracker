@@ -98,11 +98,11 @@ plt.grid()
 
 out_path = DEFAULT_OUT / "Robotics Behavior by Kalamn filter and PID controller.png"
 plt.savefig(out_path, dpi=300)
+plt.show()
 
 # -----------------------------
 # Controller Input
 # -----------------------------
-plt.show()
 plt.figure()
 plt.plot(time, control_inputs)
 plt.title("Control Input (u)")
