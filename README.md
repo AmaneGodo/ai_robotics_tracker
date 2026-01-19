@@ -227,6 +227,26 @@ Modern robotics systems are not control-only or estimation-only — they are tig
 - Conceptual Milestone:
     - Can now clearly explain why Kalman Filters exist, where they sit in the pipeline, and how they interact with controllers — without relying on math-heavy derivations.
 
+### Week 8 — Sensor Fusion & Bias-Aware Estimation (Project #2)
+**Primary Focus:** Robotics estimation project (IMU + GPS sensor fusion)
+
+- Designed and implemented a **2D bias-aware Kalman Filter** for IMU + GPS fusion
+- Modeled accelerometer bias as a latent state and estimated it via innovation
+- Demonstrated how GPS update rate affects:
+  - bias observability
+  - estimator stability
+  - correction magnitude
+- Integrated estimation with closed-loop control to show:
+  - estimation errors directly affect control performance
+  - robust control requires robust state estimation
+- Produced comparative simulations for:
+  - Fast GPS (0.5s)
+  - Slow GPS (2.5s)
+  - Very slow GPS (5.0s)
+- Saved plots and documented results in a dedicated project README
+
+**Note:** Algorithm practice was deprioritized this week to complete a resume-critical robotics project.
+
 ## 💡 LeetCode / Algorithms
 ### Week 1 — Sliding Window Patterns
 - Practiced:
@@ -254,7 +274,7 @@ Modern robotics systems are not control-only or estimation-only — they are tig
     - Copy List With Random Pointer
 
 ### Week 5 - Binary Trees
-- Watched the videos to understand the foundamental.
+- Watched videos to understand the fundamental.
     - BST Insert and Remove
     - Depth first search
     - Breadth-first search
@@ -288,6 +308,11 @@ Modern robotics systems are not control-only or estimation-only — they are tig
     - Count Good Nodes in Binary Tree
     - Validate Binary Search Tree
     - Kth Smallest Element in a BST
+
+### Week 8 - Backtracking
+- Watched videos to understand the fundamental.
+    - Subsets
+    - Combination Sum
 
 ## 🌐 Networking Progress
 ### Week 1 — Profile Setup
