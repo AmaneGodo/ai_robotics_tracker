@@ -85,16 +85,16 @@ for _ in range(steps):
     y_imu.append(imu_y)
     
     # simplified controller
-    # desired position 
+    ## desired position 
     x_desired = 0.0
     y_desired = 0.0
 
-    # PD gains (starting small)
+    ## PD gains (starting small)
     kp = 0.1
     kd = 0.05
 
-    # control law
-    # a_command = kp * (desired position - kalman estimated position) - kd * kalman estimated velocity
+    ## control law
+    ### a_command = kp * (desired position - kalman estimated position) - kd * kalman estimated velocity
     ax_command = kp * (x_desired - kalman.x_hat[0]) - kd * kalman.x_hat[2]
     ay_command = kp * (y_desired - kalman.x_hat[1]) - kd * kalman.x_hat[3]
 

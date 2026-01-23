@@ -59,7 +59,7 @@ class KalmanFilter2D:
             # if a_measured is uncertain -> velocity = v + a_meas * dt thus velocity becomes uncertain
             # if velocity is uncertain   -> position = x + (v * dt) + (a_meas * dt**2)/2 thus position also become uncertain
 
-        # IMU uncertainty = combination of acceleration bias uncertainty and noise from IMU
+        # IMU uncertainty = combination of noise from IMU and acceleration bias uncertainty
         Q_eff_x = self.Q_imu + self.P_bx
         Q_eff_y = self.Q_imu + self.P_by
 
@@ -99,8 +99,6 @@ class KalmanFilter2D:
         # Compute Kalman gain: K = predicted position uncertainty / (predicted position uncertainty + GPS uncertainty)
         K_x = self.P_x / (self.P_x + self.R_gps)
         K_y = self.P_y / (self.P_y + self.R_gps)
-
-        K_b = 0.002
 
         # Correct state estimate: 
         # estimated position = predicted position + K * innovation
