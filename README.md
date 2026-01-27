@@ -247,6 +247,26 @@ Modern robotics systems are not control-only or estimation-only — they are tig
 
 **Note:** Algorithm practice was deprioritized this week to complete a resume-critical robotics project.
 
+### Week 9 - Project 2 Review & Consolidation
+**Primary Focus**: Deep review and consolidation of Project #2 (2D Bias-Aware Kalman Filter with Control) in preparation for interviews and future extension.
+
+- Conducted a full technical review of Project #2 implementation and results
+- Re-verified understanding of:
+    - Why IMU accelerometer bias causes drift through double integration
+    - Why GPS measurements are noisy, slow, and insufficient alone
+    - How innovation reveals bias direction and magnitude over time
+    - Why estimation must precede control in real robotic systems
+- Re-examined estimator behavior under different GPS update rates:
+    - Fast GPS → smoother corrections
+    - Slow GPS → step-like corrections and delayed bias observability
+- Reviewed saved plots:
+    - True position vs IMU dead-reckoning vc GPS vc Kalman estimate
+    - Estimated bias convergence over time
+- Revisited controller integration and confirmed:
+    - Control actions are driven by estimated state, not raw sensor measurements
+    - Estimation quality directly impacts control stability and convergence
+- Refined Project #2 README for clarity, interview readiness, and technical accuracy
+
 ## 💡 LeetCode / Algorithms
 ### Week 1 — Sliding Window Patterns
 - Practiced:
@@ -313,6 +333,21 @@ Modern robotics systems are not control-only or estimation-only — they are tig
 - Watched videos to understand the fundamental.
     - Subsets
     - Combination Sum
+
+### Week 9 - Backtracking (continued)
+- Continue learning backtracking fundamentals
+    - Subsets
+    - Combination Sum
+    - Combination Sum II
+    - Permutations
+    - Subsets II
+    - Generate Parentheses
+    - Word Search
+    - Palindrome Partitioning
+    - Letter Combinations of a Phone Number
+
+- Approximately 50% confidence solving medium backtracking problems independently
+- Focused on conceptual understanding rather than speed
 
 ## 🌐 Networking Progress
 ### Week 1 — Profile Setup
