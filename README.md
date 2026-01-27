@@ -1,6 +1,19 @@
 # 🧠 AI & Robotics Learning Tracker
-
 This repository documents my weekly progress toward becoming a Robotics + AI Software Engineer, with the goal of securing an internship in Summer 2026.
+
+## ⭐ Highlight Projects (Recruiter-Facing)
+### Project #2 — 2D Bias-Aware Kalman Filter (IMU + GPS)
+- Implemented 2D state estimation with accelerometer bias explicitly modeled
+- Demonstrated bias observability via innovation over time
+- Fused IMU + slow GPS under multiple update rates
+- Integrated estimation with closed-loop control
+- Focused on intuition, stability, and explainability (no black-box math)
+
+### Project #3 — C++ Estimation–Control Architecture (In Progress)
+- Built clean multi-file C++ system with Plant / Estimator / Controller separation
+- Implemented explicit state ownership and closed-loop data flow
+- Demonstrated stabilization behavior from estimated state
+- Designed as a foundation for future ROS integration
 
 ## 🚧 Project Deliverables
 ### Week 1 — Environment Setup
