@@ -1,7 +1,9 @@
 # 🧠 AI & Robotics Learning Tracker
-This repository documents my weekly progress toward becoming a Robotics + AI Software Engineer, with the goal of securing an internship in Summer 2026.
+This repository documents my structured preparation toward Robotics / Autonomy software internships, with a focus on estimation, control, and systems-level reasoning.
 
 ## ⭐ Highlight Projects (Recruiter-Facing)
+Emphasis is placed on system architecture, estimation–control interaction, and explainability over raw mathematical complexity.
+
 ### Project #2 — 2D Bias-Aware Kalman Filter (IMU + GPS)
 - Implemented 2D state estimation with accelerometer bias explicitly modeled
 - Demonstrated bias observability via innovation over time
@@ -144,7 +146,7 @@ python -m projects.api_plotter.api_plotter \
 --insights
 ```
 
-### Week 7 — Estimation + Control (Kalman Filter Integration)
+### **Transition to Robotics-Focused Work** Week 7 — Estimation + Control (Kalman Filter Integration)
 **Goal:** Transition from pure data pipelines to robotics-relevant estimation and control concepts, bridging software engineering with robotics fundamentals.
 - Focused on state estimation and control theory as a core robotics skill.
 - Studied how estimation (Kalman Filter) and control (PID) complement each other in real systems.
@@ -222,7 +224,9 @@ Modern robotics systems are not control-only or estimation-only — they are tig
     5. Robots rely on Kalman filters because they provide a smooth, reliable estimate of position, speed, or orientation — essential for drones, cars, and manipulators operating in noisy real-world environments.
 - Drew a continuous prediction → correction diagram to visualize the loop.
 
-### Week 7 — Kalman Filter + Estimation–Control Pipeline
+### Week 7 — Kalman Filter + Estimation–Control Pipeline (Project #1)
+Note: An earlier 1D matrix-based Kalman filter implementation was used as an initial learning step before redesigning estimation in a bias-aware, intuition-first formulation (Project #2).
+
 - Deepened understanding of Kalman Filter beyond intuition videos:
     - Prediction step (motion / system model)
     - Update step (sensor measurement correction)
@@ -243,7 +247,7 @@ Modern robotics systems are not control-only or estimation-only — they are tig
 ### Week 8 — Sensor Fusion & Bias-Aware Estimation (Project #2)
 **Primary Focus:** Robotics estimation project (IMU + GPS sensor fusion)
 
-- Designed and implemented a **2D bias-aware Kalman Filter** for IMU + GPS fusion
+- Designed and implemented a **2D bias-aware state estimator** (Kalman-style) for IMU + GPS fusion
 - Modeled accelerometer bias as a latent state and estimated it via innovation
 - Demonstrated how GPS update rate affects:
   - bias observability
