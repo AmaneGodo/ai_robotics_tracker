@@ -284,6 +284,28 @@ Note: An earlier 1D matrix-based Kalman filter implementation was used as an ini
     - Estimation quality directly impacts control stability and convergence
 - Refined Project #2 README for clarity, interview readiness, and technical accuracy
 
+### Week 10 - Project #3 — Architecture Phase
+Continued Project #3 (C++ Estimation–Control Architecture) with a focus on system structure over math.
+- Implemented and verified:
+    - Clear separation of Plant / Estimator / Controller
+    - Explicit ownership of:
+        - true state (Plant)
+        - estimated state (Estimator)
+- Closed-loop data flow:
+    Plant → Estimator → Controller → Plant
+- Tested system behavior under non-zero initial velocity:
+    - Observed initial overshoot due to momentum
+    - Identified discrete-time update behavior (state advances before observation)
+    - Confirmed velocity sign flip and decay under proportional control
+- Added documentation clarifying discrete-time plant update behavior (step 0 reflects post-update state, not raw initialization).
+- Reinforced understanding that:
+    - control acts on velocity
+    - velocity integrates into position
+    - estimation must precede control in real systems
+- Status:
+    Architecture locked and understood. No new features added by design.
+    Project is intentionally positioned as a foundation for future math / ROS integration, not a finished estimator.
+
 ## 💡 LeetCode / Algorithms
 ### Week 1 — Sliding Window Patterns
 - Practiced:
@@ -302,7 +324,7 @@ Note: An earlier 1D matrix-based Kalman filter implementation was used as an ini
     - Remove Nth Node From End of List
     - Copy List With Random Pointer
 
-### Week 4 – Linked Lists II (Implementation Confidence)
+### Week 5 – Linked Lists II (Implementation Confidence)
 - This week's main focus was to not just to learn but also to be comfortable to solve on my own. 
     - Reverse Linked List
     - Merge Two Sorted Lists
@@ -310,7 +332,7 @@ Note: An earlier 1D matrix-based Kalman filter implementation was used as an ini
     - Remove Nth Node From End of List
     - Copy List With Random Pointer
 
-### Week 5 - Binary Trees
+### Week 8 - Binary Trees
 - Watched videos to understand the fundamental.
     - BST Insert and Remove
     - Depth first search
@@ -323,6 +345,33 @@ Note: An earlier 1D matrix-based Kalman filter implementation was used as an ini
     - Maximum Depth of Binary Tree
     - Diameter of binary tree
     - Balanced binary tree
+
+### Week 10
+- Backtracking:
+    - Reached ~80% confidence on core patterns:
+        - Subsets
+        - Permutations
+        - Combination Sum
+        - Word Search
+        - Palindrome Partitioning
+    - Able to reason about recursion state, choices, and backtracking logic with minimal guidance.
+
+- Graphs (New):
+    - Began learning graph fundamentals (low confidence, early stage):
+        - Grid-based BFS / DFS
+        - Visited state management
+        - Connected components
+    - Solved or studied:
+        - Number of Islands
+        - Max Area of Island
+        - Clone Graph
+        - Walls and Gates
+        - Rotting Oranges
+        - Pacific Atlantic Water Flow
+    - Current focus is conceptual understanding, not speed or optimization.
+
+Status:
+Backtracking is becoming reliable. Graphs are in the exploration phase.
 
 **Completed:**
 - Reversed Linked List (self-coded)  
