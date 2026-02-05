@@ -10,7 +10,7 @@ int main() {
     Controller controller;
 
     double control = 0.0;
-    for (int k=0; k < 5; ++k) {
+    for (int k=0; k < 10; ++k) {
         std::cout << "\n--- step " << k << "---\n";
 
         State measurement   = plant.update(control);
