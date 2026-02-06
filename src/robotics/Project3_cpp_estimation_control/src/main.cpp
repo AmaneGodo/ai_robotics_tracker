@@ -3,6 +3,10 @@
 #include "Estimator.h"
 #include "Controller.h"
 
+// Main control loop:
+// Plant -> Estimator -> Controller -> Plant
+// Mirrors a real estimation–control pipeline
+
 int main() {
     std::cout << "System starting...\n";
     Plant plant;
