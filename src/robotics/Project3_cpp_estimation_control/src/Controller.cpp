@@ -16,6 +16,5 @@ double Controller::update(const State& estimated_state) {
     //  - derivative term damps velocity to reduce overshoot
     double u = -kp_ * estimated_state.position - kd_ * estimated_state.velocity;
 
-    std::cout << "[Controller] u=" << u << "\n";
     return u;
 }

@@ -6,7 +6,7 @@
 class Plant {
 public: 
     Plant();  
-    State update(double control_input);
+    State update(double control_input, double dt);
 
 private:
     State true_state_;

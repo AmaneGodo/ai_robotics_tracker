@@ -13,13 +13,25 @@ int main() {
     Estimator estimator;
     Controller controller;
 
-    double control = 0.0;
-    for (int k=0; k < 10; ++k) {
-        std::cout << "\n--- step " << k << "---\n";
+    double u = 0.0;     // control input
+    double dt = 0.01;   // 10 ms timestep → 100 Hz loop
 
-        State measurement   = plant.update(control);
-        State estimate      = estimator.update(measurement);
-        control             = controller.update(estimate);
+    State measurement;
+    State estimate;
+
+    for (int k=0; k < 1000; ++k) {
+        measurement   = plant.update(u, dt);
+        estimate      = estimator.update(measurement);
+        u             = controller.update(estimate);
+
+        if (k % 50 == 0) {
+            std::cout << "\n--- step " << k << "---\n";
+            std::cout << "[Plant] pos=" << measurement.position
+              << " vel=" << measurement.velocity << "\n";
+            std::cout << "[Estimator] est_pos=" << estimate.position
+              << " est_vel=" << estimate.velocity << "\n";
+            std::cout << "[Controller] u=" << u << "\n";
+        }
     }
 
     return 0;

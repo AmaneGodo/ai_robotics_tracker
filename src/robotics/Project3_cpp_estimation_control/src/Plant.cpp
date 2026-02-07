@@ -9,13 +9,10 @@ Plant::Plant() {
     true_state_.velocity = 1.0;
 }
 
-State Plant::update(double control_input) {
+State Plant::update(double control_input, double dt) {
     // Dummy deterministic update
-    true_state_.velocity += control_input;
-    true_state_.position += true_state_.velocity;
-
-    std::cout << "[Plant] pos=" << true_state_.position
-              << " vel=" << true_state_.velocity << "\n";
+    true_state_.velocity += control_input * dt;
+    true_state_.position += true_state_.velocity * dt;
 
     return true_state_;
 }
