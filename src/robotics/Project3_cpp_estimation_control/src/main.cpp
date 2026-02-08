@@ -11,7 +11,7 @@ int main() {
     std::cout << "System starting...\n";
     Plant plant;
     Estimator estimator;
-    Controller controller;
+    Controller controller(0.1, 0.05, 2, -2); // (kp, kd, u_max, u_min)
 
     double u = 0.0;     // control input
     double dt = 0.01;   // 10 ms timestep → 100 Hz loop
