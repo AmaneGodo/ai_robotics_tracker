@@ -306,6 +306,34 @@ Continued Project #3 (C++ Estimation–Control Architecture) with a focus on sys
     Architecture locked and understood. No new features added by design.
     Project is intentionally positioned as a foundation for future math / ROS integration, not a finished estimator.
 
+### Week 11 — Project #3 (C++ Estimation–Control with Noise & Constraints)
+Primary Focus: Advancing Project #3 from pure architecture into more realistic control-system behavior.
+- Extended the discrete-time plant model with:
+    - Explicit timestep (dt) handling
+    - Velocity-driven position integration
+- Implemented PD control in C++:
+    - Proportional term for position correction
+    - Derivative term for velocity damping
+- Added control saturation limits:
+    - Enforced realistic actuator constraints using clamping
+    - Observed how saturation affects convergence and settling behavior
+- Introduced sensor noise simulation directly in the plant:
+    - Gaussian noise applied to position and velocity measurements
+    - True state remains hidden inside the plant
+    - Estimator receives only noisy measurements (realistic sensor model)
+- Verified closed-loop behavior under noise:
+    - Slower convergence due to uncertainty
+    - Increased oscillation compared to noise-free system
+    - Reinforced why filtering is required in real robotic systems
+- Key Takeaways:
+    - Control operates on estimated state, not ground truth.
+    - Noise fundamentally changes controller behavior.
+    - Architecture cleanly supports future estimator upgrades (Kalman filter, observers).
+    - System now mirrors a real robotics pipeline:
+        - Plant (true state) → Noisy Measurement → Estimator → Controller → Plant
+- Status:
+    Project #3 has progressed from a structural exercise into a realistic estimation–control simulation and is now well-positioned for future estimator integration and ROS-style expansion.
+
 ## 💡 LeetCode / Algorithms
 ### Week 1 — Sliding Window Patterns
 - Practiced:
@@ -372,6 +400,34 @@ Continued Project #3 (C++ Estimation–Control Architecture) with a focus on sys
 
 Status:
 Backtracking is becoming reliable. Graphs are in the exploration phase.
+
+### Week 11
+- Backtracking:
+    - Reviewed core patterns and reinforced understanding:
+        - Permutations
+        - Generate Parentheses
+        - Word Search
+        - Palindrome Partitioning
+    - Maintained ~80% confidence on medium problems with guidance.
+    - Focused on reasoning about recursion state, choices, and backtracking mechanics.
+
+- Graphs:
+    - Completed conceptual learning of all core medium-level graph patterns:
+        - Grid-based BFS / DFS
+        - Visited-state management
+        - Connected components
+        - Multi-source BFS
+    - Studied and implemented solutions for:
+        - Number of Islands
+        - Max Area of Island
+        - Clone Graph
+        - Walls and Gates
+        - Rotting Oranges
+        - Pacific Atlantic Water Flow
+    - Current status:
+        - Strong conceptual understanding
+        - Not yet confident solving medium graph problems independently
+        - Priority is building intuition before speed or optimization
 
 **Completed:**
 - Reversed Linked List (self-coded)  
