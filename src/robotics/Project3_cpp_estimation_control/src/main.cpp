@@ -8,13 +8,14 @@
 // Mirrors a real estimation–control pipeline
 
 int main() {
+    double dt = 0.01;   // 10 ms timestep → 100 Hz loop
+
     std::cout << "System starting...\n";
     Plant plant;
-    Estimator estimator;
+    Estimator estimator(0.2, 0.1, dt);
     Controller controller(0.1, 0.05, 2, -2); // (kp, kd, u_max, u_min)
 
     double u = 0.0;     // control input
-    double dt = 0.01;   // 10 ms timestep → 100 Hz loop
 
     State measurement;
     State estimate;
