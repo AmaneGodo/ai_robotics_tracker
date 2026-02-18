@@ -6,13 +6,18 @@ This repository documents my structured preparation toward Robotics / Autonomy s
 ### Project #3 — C++ Estimation–Control System (Alpha–Beta + PD)
 A discrete-time 1D plant simulation with noisy sensing, alpha–beta state estimation, and PD control. Includes CSV logging + Python plotting to visualize estimator/control behavior and tuning tradeoffs (β).
 
-- 📁 Code: `projects/project3_cpp_estimation_control/`
-- 📄 README: `projects/project3_cpp_estimation_control/README.md`
-- 📊 Plots: `projects/project3_cpp_estimation_control/docs/`
+- 📁 Code: `src/robotics/project3_cpp_estimation_control/`
+- 📄 README: `src/robotics/project3_cpp_estimation_control/README.md`
+- 📊 Plots: `src/robotics/project3_cpp_estimation_control/docs/`
+
+Project #3 has been extracted into a standalone repository for clarity and portfolio presentation:
+👉 https://github.com/AmaneGodo/cpp-estimation-control
+
+This project implements a discrete-time alpha–beta estimator and PD controller in C++ with strict architectural separation between plant, estimation, and control.
 
 ### Project #2 — 2D Bias-Aware Kalman Filter (IMU + GPS) [Python]
-- 📁 Code: `projects/project2_kalman_2d_bias_imu_gps/`
-- 📄 README: `projects/project2_kalman_2d_bias_imu_gps/README.md`
+- 📁 Code: `src/robotics/project2_kalman_2d_bias_imu_gps/`
+- 📄 README: `src/roboticsproject2_kalman_2d_bias_imu_gps/README.md`
 
 ### Project #3 — C++ Estimation–Control Architecture (In Progress)
 - Built clean multi-file C++ system with Plant / Estimator / Controller separation
