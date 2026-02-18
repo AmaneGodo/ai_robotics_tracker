@@ -1,8 +1,24 @@
 # 🧠 AI & Robotics Learning Tracker
 This repository documents my structured preparation toward Robotics / Autonomy software internships, with a focus on estimation, control, and systems-level reasoning.
 
-## ⭐ Highlight Projects (Recruiter-Facing)
-Emphasis is placed on system architecture, estimation–control interaction, and explainability over raw mathematical complexity.
+## ⭐ Featured Projects (Recruiter-Facing)
+
+### Project #3 — C++ Estimation–Control System (Alpha–Beta + PD)
+A discrete-time 1D plant simulation with noisy sensing, alpha–beta state estimation, and PD control. Includes CSV logging + Python plotting to visualize estimator/control behavior and tuning tradeoffs (β).
+
+- 📁 Code: `projects/project3_cpp_estimation_control/`
+- 📄 README: `projects/project3_cpp_estimation_control/README.md`
+- 📊 Plots: `projects/project3_cpp_estimation_control/docs/`
+
+### Project #2 — 2D Bias-Aware Kalman Filter (IMU + GPS) [Python]
+- 📁 Code: `projects/project2_kalman_2d_bias_imu_gps/`
+- 📄 README: `projects/project2_kalman_2d_bias_imu_gps/README.md`
+
+### Project #3 — C++ Estimation–Control Architecture (In Progress)
+- Built clean multi-file C++ system with Plant / Estimator / Controller separation
+- Implemented explicit state ownership and closed-loop data flow
+- Demonstrated stabilization behavior from estimated state
+- Designed as a foundation for future ROS integration
 
 ### Project #2 — 2D Bias-Aware Kalman Filter (IMU + GPS)
 - Implemented 2D state estimation with accelerometer bias explicitly modeled
@@ -11,11 +27,7 @@ Emphasis is placed on system architecture, estimation–control interaction, and
 - Integrated estimation with closed-loop control
 - Focused on intuition, stability, and explainability (no black-box math)
 
-### Project #3 — C++ Estimation–Control Architecture (In Progress)
-- Built clean multi-file C++ system with Plant / Estimator / Controller separation
-- Implemented explicit state ownership and closed-loop data flow
-- Demonstrated stabilization behavior from estimated state
-- Designed as a foundation for future ROS integration
+> If you’re reviewing for internships: start with **Project #3 (C++)** and **Project #2 (sensor fusion)** above.
 
 ## 🚧 Project Deliverables
 ### Week 1 — Environment Setup
